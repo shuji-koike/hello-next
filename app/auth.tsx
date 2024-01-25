@@ -5,7 +5,6 @@ import Image from "next/image";
 import React, { useOptimistic, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { execDate, execUname } from "./actions";
-import { exec } from "child_process";
 
 export const AuthHeader = () => {
   return (
@@ -30,10 +29,18 @@ export const AuthButton = () => {
         Server Action
       </Button>
       <Button size={"sm"} onClick={() => execUname().then(setState)}>
-        Server Action (State)
+        Server Action (state)
       </Button>
-      {value && <span>uname: {value}</span>}
-      {state && <span>uname: {state}</span>}
+      <Button
+        size={"sm"}
+        onClick={() => {
+          "server action";
+          console.log(Date());
+        }}
+      >
+        Server Action (inline)
+      </Button>
+      {(value || state) && <span>uname: {value || state}</span>}
     </>
   );
 };

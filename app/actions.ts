@@ -12,7 +12,6 @@ export async function execDate() {
 }
 
 export async function execUname() {
-  "server action";
   return new Promise<string>((resolve) => {
     exec("uname -a", (_, stdout) => resolve(stdout));
   });
