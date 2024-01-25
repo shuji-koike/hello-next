@@ -39,4 +39,26 @@ sign in クリックするとログインモーダルが出てきたの感動し
 https://ui.shadcn.com/docs/components/button
 
 インストールの仕組みの良さが全くわからん
-インストール
+
+---
+
+一旦デプロイしてみる
+
+ぽちぽちで簡単にできた
+
+https://hello-next-nu-eight.vercel.app/
+
+build 時にエラーでてた
+Compiler server unexpectedly exited with code: null and signal: SIGTERM
+
+google の oauth が動かない orz
+環境変数はセットした
+
+NEXTAUTH_SECRET を設定してなかった orz
+
+環境変数セットして redeploy したらログインモーダルは出るようになった
+
+> https://hello-next-nu-eight.vercel.app/?error=redirect_uri_mismatch
+
+ログインには失敗する orz
+もう一回やったら行けた
