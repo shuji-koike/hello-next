@@ -4,6 +4,7 @@ import { SessionProvider, signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { execDate } from "./actions";
 
 export const AuthHeader = () => {
   return (
@@ -36,6 +37,10 @@ export const UserAvatar = () => {
       width={32}
       height={32}
       src={data.user.image}
+      onClick={async () => {
+        console.log("execDate");
+        console.log(await execDate());
+      }}
     />
   );
 };

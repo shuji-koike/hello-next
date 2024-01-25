@@ -62,3 +62,5 @@ NEXTAUTH_SECRET を設定してなかった orz
 
 ログインには失敗する orz
 もう一回やったら行けた
+
+https://vercel.com/shuji-koike/hello-next/deployments
