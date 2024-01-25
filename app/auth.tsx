@@ -33,7 +33,7 @@ export const AuthButton = () => {
       </Button>
       <Button
         size={"sm"}
-        onClick={() => {
+        onClick={async () => {
           "server action";
           console.log(Date());
         }}
@@ -73,7 +73,7 @@ export const SignInButton = () => {
 
 export const SignOutButton = () => {
   return (
-    <Button variant={"ghost"} size="sm" onClick={() => signOut()}>
+    <Button variant={"outline"} size="sm" onClick={() => signOut()}>
       Sign out
     </Button>
   );

@@ -66,3 +66,4 @@ NEXTAUTH_SECRET を設定してなかった orz
 https://vercel.com/shuji-koike/hello-next/deployments
 
 ほぼ空っぽのプロジェクトとはいえ、push して 40 秒でデプロイされるの素晴らしすぎる！！！
+cloud functions デプロイ遅すぎ！
