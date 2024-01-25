@@ -64,3 +64,5 @@ NEXTAUTH_SECRET を設定してなかった orz
 もう一回やったら行けた
 
 https://vercel.com/shuji-koike/hello-next/deployments
+
+ほぼ空っぽのプロジェクトとはいえ、push して 40 秒でデプロイされるの素晴らしすぎる
