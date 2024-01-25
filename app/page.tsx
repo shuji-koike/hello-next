@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { AuthHeader } from "./auth";
+import { Button } from "@/components/ui/button";
+import { exec } from "child_process";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <header>
+      <header className="flex gap-3">
         <AuthHeader />
       </header>
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">

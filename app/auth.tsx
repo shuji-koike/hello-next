@@ -2,9 +2,10 @@
 
 import { SessionProvider, signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
-import React from "react";
+import React, { useOptimistic, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { execDate } from "./actions";
+import { execDate, execUname } from "./actions";
+import { exec } from "child_process";
 
 export const AuthHeader = () => {
   return (
@@ -15,15 +16,25 @@ export const AuthHeader = () => {
 };
 
 export const AuthButton = () => {
+  const [value, setValue] = useOptimistic("");
+  const [state, setState] = useState("");
   const { status, data } = useSession();
   if (data) console.log(data);
   if (status === "loading")
     return <button onClick={() => signIn}>loading...</button>;
   return (
-    <div className="flex gap-3">
+    <>
       <UserAvatar />
       {status === "authenticated" ? <SignOutButton /> : <SignInButton />}
-    </div>
+      <Button size={"sm"} onClick={() => execUname().then(setValue)}>
+        Server Action
+      </Button>
+      <Button size={"sm"} onClick={() => execUname().then(setState)}>
+        Server Action (State)
+      </Button>
+      {value && <span>uname: {value}</span>}
+      {state && <span>uname: {state}</span>}
+    </>
   );
 };
 
