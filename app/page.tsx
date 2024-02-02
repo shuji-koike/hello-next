@@ -24,9 +24,9 @@ export default async function Home() {
           action={async function Post(formData: FormData) {
             "use server";
             if (!formData) return;
-            await sql`INSERT INTO Pets (${formData.get("title") ?? ""}, ${
-              formData.get("memo") ?? ""
-            })`;
+            await sql`INSERT INTO Pets (${String(
+              formData.get("title")
+            )}, ${String(formData.get("memo"))})`;
           }}
         >
           <input type="text" name="title" placeholder="title" />
