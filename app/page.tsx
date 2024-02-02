@@ -21,12 +21,12 @@ export default async function Home() {
       </header>
       <article className="p-4">
         <form
-          action={async function Post(formData: FormData) {
+          action={async function Post(formData) {
             "use server";
             if (!formData) return;
-            await sql`INSERT INTO Pets (${String(
-              formData.get("title")
-            )}, ${String(formData.get("memo"))})`;
+            await sql`INSERT INTO Pets (
+              ${String(formData.get("title"))},
+              ${String(formData.get("memo"))})`;
           }}
         >
           <input type="text" name="title" placeholder="title" />
