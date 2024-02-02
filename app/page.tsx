@@ -21,12 +21,16 @@ export default async function Home() {
       </header>
       <article className="p-4">
         <form
-          action={async function Post() {
+          action={async function Post(formData: FormData) {
             "use server";
+            if (!formData) return;
+            await sql`INSERT INTO Pets (${formData.get("title") ?? ""}, ${
+              formData.get("memo") ?? ""
+            })`;
           }}
         >
-          <input type="text" name="name" placeholder="title" />
-          <input type="text" name="owner" placeholder="memo" />
+          <input type="text" name="title" placeholder="title" />
+          <input type="text" name="memo" placeholder="memo" />
           <Button>save</Button>
         </form>
         {rows.map((row) => (
