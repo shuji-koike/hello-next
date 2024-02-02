@@ -18,6 +18,7 @@ export const AuthButton = () => {
   const [value, setValue] = useOptimistic("");
   const [state, setState] = useState("");
   const { status, data } = useSession();
+
   if (data) console.log(data);
   if (status === "loading")
     return <button onClick={() => signIn}>loading...</button>;
